@@ -25,7 +25,14 @@ export class RestaurantsService {
       // encare este método apenas como uma configuração da chamada do serviço. O que efetivamente executa a chamada é o método é o subscribe
       // Veja como ficou a chamada desse cara no ngOnInit de restaurants.component.ts
       .catch(ErrorHandler.handleError) // o catch serve para lidar com erros na requisição. O parâmetro passado é um objeto do tipo Observable
-    
+
+  }
+
+  restaurantById(id: string): Observable<Restaurant>{
+    return this.http.get(`${MEAT_API}/restaurants/${id}`)
+      .map(response => response.json())
+      .catch(ErrorHandler.handleError)
+
   }
 
 }
