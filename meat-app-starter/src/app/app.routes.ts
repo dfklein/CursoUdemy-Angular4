@@ -15,6 +15,6 @@ export const ROUTES: Routes = [
     children: [
       {path: '', redirectTo: 'menu', pathMatch:'full'}, // path match full quer dizer que o redirecionamento funcionará apenas para esta URL especificamente.
       {path: 'menu', component: MenuComponent},
-      {path: 'review', component: ReviewsComponent} // veja em restaurant-detail.component.html que você declarou outro router-outlet, que é para comportar o conteúdo das rotas filhas.
+      {path: 'reviews', component: ReviewsComponent} // veja em restaurant-detail.component.html que você declarou outro router-outlet, que é para comportar o conteúdo das rotas filhas.
     ]}
 ]

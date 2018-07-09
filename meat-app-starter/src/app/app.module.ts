@@ -38,7 +38,11 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService],
-  bootstrap: [AppComponent]
+  providers: [
+    RestaurantsService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
