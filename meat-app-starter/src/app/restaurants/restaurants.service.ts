@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 
 import {ErrorHandler} from '../app.error-handler';
 import {Restaurant} from "./restaurant/restaurant.model";
+import {MenuItem} from "../restaurant-detail/menu-item/menu-item.model";
 import {MEAT_API} from '../app.api';
 
 // Um serviço deve sempre ser injetado ou no módulo principal ou no componente (este aqui foi injetado no módulo principal -> veja em app.module.ts dentro do @NgModule a propriedade 'providers')
@@ -41,10 +42,9 @@ export class RestaurantsService {
     .catch(ErrorHandler.handleError);
   }
 
-  /* menuOfRestaurant(id: string): Observable<MenuItem[]>{
+  menuOfRestaurant(id: string): Observable<MenuItem[]>{
       return this.http.get(`${MEAT_API}/restaurants/${id}/menu`)
         .map(response => response.json())
         .catch(ErrorHandler.handleError)
     }
-    */
-}
+  }
