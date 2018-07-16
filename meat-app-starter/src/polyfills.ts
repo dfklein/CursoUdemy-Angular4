@@ -17,4 +17,8 @@ import 'core-js/es6/reflect';
 
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
-
+// scripts importados para fazer a localização da aplicação (polyfills.js).
+// O Intl é uma dependência instalada no package.json (linha 27)
+// Além disso ele é declarado no app.module.ts (import { NgModule, LOCALE_ID } from '@angular/core'; + declarar providers: {provide: LOCALE_ID, useValue: 'pt-BR'})
+import 'intl'
+import 'intl/locale-data/jsonp/pt-BR.js'

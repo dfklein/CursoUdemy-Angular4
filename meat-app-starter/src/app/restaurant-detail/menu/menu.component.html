@@ -4,11 +4,11 @@
   <mt-menu-item
     *ngFor="let item of menu | async"
     [menuItem]="item"
-    (add)="addMenuItem($event)">
+    (add)="shoppingCart.addItem($event)">
   </mt-menu-item>
 
 </div>
 <div class="col-md-3 col-xs-12">
-  <mt-shopping-cart></mt-shopping-cart>
+  <mt-shopping-cart #shoppingCart></mt-shopping-cart><!-- o que está definido na cerquilha é um alias que te permitirá chamar um método de shopping-cart de fora dele (no menu, neste caso) -->
 </div>
 <!-- FIM DO MENU -->

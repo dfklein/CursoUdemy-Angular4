@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -41,8 +41,12 @@ import { RestaurantsService }  from './restaurants/restaurants.service';
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
-    RestaurantsService, ShoppingCartService
-
+    RestaurantsService,
+    ShoppingCartService,
+    // scripts importados para fazer a localização da aplicação (polyfills.js).
+    // O Intl é uma dependência instalada no package.json (linha 27)
+    // Além disso ele é declarado no app.module.ts (import { NgModule, LOCALE_ID } from '@angular/core'; + declarar providers: {provide: LOCALE_ID, useValue: 'pt-BR'})
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [
     AppComponent
