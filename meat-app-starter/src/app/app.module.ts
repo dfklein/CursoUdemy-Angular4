@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // não esqueça de declarar isto no array de imports do módulo ali em baixo.
 
 import {ROUTES} from './app.routes';
 
@@ -20,6 +21,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 // Serviços: devem ser declarados no "providers"
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service'
 import { RestaurantsService }  from './restaurants/restaurants.service';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +35,13 @@ import { RestaurantsService }  from './restaurants/restaurants.service';
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
