@@ -1,0 +1,8 @@
+<div class="form-group" [class.has-success]="hasSuccess()"
+                        [class.has-error]="hasError()" ><!-- "has-success" e "has-error" são classes de CSS que serão aplicadas conforme a expressão booleana definida. -->
+  <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i>{{label}}</label>
+  <!-- <input type="text" name="address" required minlength="5" #iptAddress="ngModel" ngModel autocomplete="off" class="form-control" id="inputSuccess" placeholder="Endereço"> -->
+  <ng-content></ng-content><!-- o ng-content define uma área onde será inserido algo externo a este componente. Onde ele for usado, ficará envolvido pelas tags <mt-input> (ver os inputs do order.component.html). Esta técnica chama content projection -->
+  <span class="help-block" *ngIf="hasSuccess()"><i class="fa fa-check"></i> Ok</span>
+  <span class="help-block" *ngIf="hasError()"><i class="fa fa-remove"></i>{{errorMessage}}</span>
+</div>
