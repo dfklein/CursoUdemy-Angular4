@@ -18,13 +18,14 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { InputComponent } from './shared/input/input.component';
+import { OrderComponent } from './order/order.component';
+import { RadioComponent } from './shared/radio/radio.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
 
 // Serviços: devem ser declarados no "providers"
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service'
 import { RestaurantsService }  from './restaurants/restaurants.service';
-import { OrderComponent } from './order/order.component';
-import { RadioComponent } from './shared/radio/radio.component';
-import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
   providers: [
     RestaurantsService,
     ShoppingCartService,
+    OrderService,
     // scripts importados para fazer a localização da aplicação (polyfills.js).
     // O Intl é uma dependência instalada no package.json (linha 27)
     // Além disso ele é declarado no app.module.ts (import { NgModule, LOCALE_ID } from '@angular/core'; + declarar providers: {provide: LOCALE_ID, useValue: 'pt-BR'})
