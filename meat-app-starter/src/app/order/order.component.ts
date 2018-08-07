@@ -31,7 +31,7 @@ export class OrderComponent implements OnInit {
     this.orderService.decreaseQty(item);
   }
 
-    remove(item: CartItem) {
-      this.orderService.remove(item);
-    }
+  remove(item: CartItem) {
+    this.orderService.remove(item);
+  }
 }
