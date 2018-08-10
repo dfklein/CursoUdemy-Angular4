@@ -35,7 +35,7 @@
             <div class="col-sm-3 col-xs-6">
               <div class="form-group">
                 <mt-input-container errorMessage="Campo obrigatório" label="Número">
-                  <input type="text" name="optional" ngModel class="form-control" id="inputSuccess" placeholder="Complemento">
+                  <input type="text" name="optionalAddress" ngModel class="form-control" id="inputSuccess" placeholder="Complemento">
                 </mt-input-container>
               </div>
             </div>
@@ -84,7 +84,10 @@
 
         <div class="row">
           <div class="col-xs-12">
-            <button class="btn btn-success pull-right" [disabled]="!form.valid || cartItems().length === 0"><i class="fa fa-credit-card"></i> Concluir Pedido
+            <button class="btn btn-success pull-right"
+              [disabled]="!form.valid || cartItems().length === 0"
+              (click)="checkOrder(form.value)"><!-- No Angular 2 e além o formulário já possui um objeto com as propriedades referidas na tela, não sendo referenciar um model específico como era feito no JS.-->
+            <i class="fa fa-credit-card"></i> Concluir Pedido
             </button>
           </div>
         </div>
