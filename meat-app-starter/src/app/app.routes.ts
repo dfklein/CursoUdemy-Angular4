@@ -7,6 +7,7 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { MenuComponent } from './restaurant-detail/menu/menu.component'
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { OrderComponent } from './order/order.component'
+import { OrderSummaryComponent } from './order-summary/order-summary.component'
 
 export const ROUTES: Routes = [
   {path:'', component: HomeComponent}, // toda vez que você utilizar um componente você precisa importá-lo. Ao definir as rotas você também precisa importá-lo no módulo principal (ver app.module.ts)
@@ -18,5 +19,6 @@ export const ROUTES: Routes = [
       {path: 'menu', component: MenuComponent},
       {path: 'reviews', component: ReviewsComponent} // veja em restaurant-detail.component.html que você declarou outro router-outlet, que é para comportar o conteúdo das rotas filhas.
     ]},
-  {path:'order', component: OrderComponent}
+  {path:'order', component: OrderComponent},
+  {path:'order-summary', component: OrderSummaryComponent}
 ]

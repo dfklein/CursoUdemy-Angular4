@@ -50,5 +50,6 @@ export class OrderService {
                     .map(response => response.json())
                      // Isto aqui apenas cria um objeto de requisição, não a envia de fato.
                      // você verá ele sendo chamado no método checkOrder de order.component.ts
+                     //.map(order => order.id)
   }
 }
